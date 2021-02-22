@@ -42,16 +42,18 @@ public class CreateWordTableCellBorders {
 		run.setText("The table:");
 
 		//create the table
-		XWPFTable table = document.createTable(2,3);
+		XWPFTable table = document.createTable(2,1);
 
 		//set column widths and table cell borders
 		for (XWPFTableRow row : table.getRows()) {
-			row.getCell(0).setWidth("5000");
-			row.getCell(1).setWidth("500");
-			setTableCellBorder(row.getCell(1), Border.TOP, STBorder.NIL);
-			setTableCellBorder(row.getCell(1), Border.BOTTOM, STBorder.NIL);
-			row.getCell(2).setWidth("5000");
+			row.getCell(0).setWidth("15000");
+//			row.getCell(1).setWidth("500");
+			setTableCellBorder(row.getCell(0), Border.TOP, STBorder.NIL);
+			setTableCellBorder(row.getCell(0), Border.BOTTOM, STBorder.NIL);
+			setTableCellBorder(row.getCell(0), Border.LEFT, STBorder.NIL);
+//			row.getCell(2).setWidth("5000");
 		}
+table.getRow(0).getCell(0).setText("отлично, работает!");
 
 		FileOutputStream out = new FileOutputStream("D:\\REPOSITORIES-2\\CreateWordTableCellBorders.docx");
 		document.write(out);

@@ -35,7 +35,6 @@ public class POIExample {
 				document.write(fo);
 			}
 			Desktop.getDesktop().open(f);
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
